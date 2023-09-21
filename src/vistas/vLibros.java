@@ -1,8 +1,11 @@
 package vistas;
 import modelos.Libro;
+import modelos.ConsultasLibro;
 
 public class vLibros extends javax.swing.JFrame {
 
+    private ConsultasLibro consultaL = new ConsultasLibro();
+    
     public vLibros() {
         initComponents();
     }
@@ -135,6 +138,11 @@ public class vLibros extends javax.swing.JFrame {
         int E = Integer.parseInt(txt_Editorial.getText());
         int A = Integer.parseInt(txt_Anio.getText());
         Libro l = new Libro(0,N,ISBN,E,A);
+        consultaL.guardarLibro(l);
+        txt_Anio.setText("");
+        txt_Nombre.setText("");
+        txt_Editorial.setText("");
+        txt_ISBN.setText("");
     }//GEN-LAST:event_btn_guardarActionPerformed
 
     public static void main(String args[]) {
